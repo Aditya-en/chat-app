@@ -1,0 +1,58 @@
+.content{
+   display: flex;
+   padding-top: 3em;
+   font-family: Arial;
+   justify-content: space-around;
+   color: white;
+}
+.text{
+   padding-left: 10px;
+   padding-right: 10px;
+}
+.text h1{
+   padding-top: 1.25em;
+   padding-bottom: 1.25em;
+   letter-spacing: 2px;  
+
+}
+.text span{
+   color:blue;
+}
+.par{
+   letter-spacing: 1.2px;
+   line-height: 30px;
+
+}
+.btnn{
+   width:120px;
+   height:40px;
+   background: #1C05B3;
+   border:none;
+   font-size: 1em;
+   border-radius: 10px;
+   cursor:pointer;
+   color:#fff;   
+   transition: 0.4s ease;
+}
+.btnn a{
+   text-decoration: none;
+   color:#000;
+   font-weight:bold;
+}
+@media only screen and (max-width:720px){
+   .login-form{
+      display: none;
+   }
+}
+@media only screen and (max-width:330px){
+   .text h1{
+      font-size: 1.15em;
+      text-align: center;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding-top: 0px;
+   }
+   .text{
+      text-align: center;
+   }
+}

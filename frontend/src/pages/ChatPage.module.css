@@ -1,0 +1,150 @@
+.container{
+   position: relative;
+   width: 100%;
+   height: 100%;
+}
+.chat-interface{
+   height: 80%;
+   display: flex;
+}
+.divider{
+   width: 1px;
+   height: 90%;
+   border: 1px solid grey;
+}
+.sidebar{
+   height: 90%;
+   flex: 1;
+}
+.chatting{
+   height: 90%;
+   flex: 3;
+}
+.box{
+   padding-inline-start: 10px;
+   display: flex;
+   height: 60px;
+   justify-content: flex-start;
+   gap: 15px;
+   align-items: center;
+}
+.box span{
+   color: white;
+   font-size: 1.1em;
+}
+.container button{
+   float: right;
+   background: transparent;
+   color: white;
+   border-radius: 5px;
+}
+.container h1{
+   
+   padding: 30px;
+   color: white;
+   font-family: Arial;
+   font-weight: bold;
+   margin: 0px;
+}
+.chatcontainer{
+   height: 80%;
+}
+.input{
+
+   padding-inline: 15px;
+   /* width: 100%; */
+}
+
+.input input{
+   font-size: 1.25em;
+   background: transparent;
+   color: white;
+   width: 80%;
+   border-radius: 5px;
+   padding: 10px;
+}
+.input button{
+   margin-left: 15px;
+   font-size: 1.25em;
+   color: white;
+   border-radius: 10px;
+   padding: 10px;
+   background: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .container{
+   display: flex;
+   height: 100vh;
+}
+.sidebar{
+   flex: 1;
+}
+.logo h1{
+   color: white;
+   font-size: 1.8em;
+   margin: 0px;
+   padding: 20px;
+   font-family: Arial;
+}
+.chat-interface{
+   flex: 3;
+   padding: 2em;
+   color: white;
+}
+.profile{
+   font-size: 1.28em;
+   font-family: Arial;
+}
+.message-container{
+   height: 20em;
+   border: 2px solid red;
+}
+.input input{
+   padding: 0.5em;
+   margin-right: 50px;
+   width: 100%;
+   color: white;
+   font-size: 1.25em;
+   background: transparent;
+   border-radius: 5px;
+}
+@media only screen and (max-width:768px){
+   .chat-interface{
+      display: none;
+   }
+} */

@@ -1,0 +1,9 @@
+.chat{
+   padding: 1em;
+   color: grey;
+   font-size: 1.25em;
+   border-bottom: 2px solid blue;
+}
+.active{
+   color: white;
+}
