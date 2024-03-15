@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./ChatPage.module.css";
 import SideBar from "../components/SideBar";
 import ChatMessage from "../components/ChatMessage";
 import useLogout from "../hooks/useLogout";
 import useConversation from "../zustand/useConversation";
 import useGetMessages from "../hooks/useGetMessages";
+import useSendMessage from "../hooks/useSendMessage";
 const ChatPage = () => {
   const { logout } = useLogout();
-  const { messages, loading } = useGetMessages();
+  const { messages } = useGetMessages();
+  const [message, setMessage] = useState("");
+
   const { selectedConversation, setSelectedConversation } = useConversation();
+
+  const { sendMessage } = useSendMessage();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!message) return;
+    console.log(message);
+    await sendMessage(message);
+    setMessage("");
+  };
+
   return (
     <div className={styles["container"]}>
       <h1>FeelTalk</h1>
@@ -36,9 +49,14 @@ const ChatPage = () => {
             <ChatMessage />
             <ChatMessage /> */}
           </div>
-          <form className={styles.input}>
-            <input type="text" placeholder="Message" />
-            <button>Send</button>
+          <form onSubmit={handleSubmit} className={styles.input}>
+            <input
+              type="text"
+              placeholder="Message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+            <button type="submit">Send</button>
           </form>
         </div>
       </div>
