@@ -17,7 +17,7 @@ const ChatPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!message) return;
-    console.log(message);
+    // console.log(message);
     await sendMessage(message);
     setMessage("");
   };
