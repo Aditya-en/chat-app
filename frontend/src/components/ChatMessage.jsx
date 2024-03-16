@@ -3,9 +3,14 @@ import styles from "./ChatMessage.module.css";
 const ChatMessage = ({ message }) => {
   // console.log("this is it", message.message);
   return (
-    <div className={styles["Message"]}>
-      <p>{message.message}</p>
-    </div>
+    <>
+      <div className={`${styles["Message"]} ${styles["sender"]}`}>
+        <p>{message.message}</p>
+      </div>
+      <div className={`${styles["Message"]} }`}>
+        <p>{message.message}</p>
+      </div>
+    </>
   );
 };
 

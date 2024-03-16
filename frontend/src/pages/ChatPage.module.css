@@ -2,6 +2,7 @@
    position: relative;
    width: 100%;
    height: 100%;
+   overflow: hidden;
 }
 .chat-interface{
    height: 80%;
@@ -48,6 +49,10 @@
 }
 .chatcontainer{
    height: 80%;
+   display: flex;
+   flex-direction: column;
+   color-scheme: dark;
+   overflow-y: scroll;
 }
 .input{
 
@@ -64,7 +69,7 @@
    padding: 10px;
 }
 .input button{
-   margin-left: 15px;
+   /* margin-left: 15px; */
    font-size: 1.25em;
    color: white;
    border-radius: 10px;

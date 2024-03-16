@@ -1,11 +1,14 @@
 import React from "react";
 import styles from "./Login.module.css";
 import LoginForm from "../components/LoginForm";
+import Navbar from "../components/Navbar";
+import Content from "../components/Content";
 const Login = () => {
   return (
-    <div className={styles["form-container"]}>
-      <LoginForm />;
-    </div>
+    <>
+      <Navbar />
+      <Content />
+    </>
   );
 };
 

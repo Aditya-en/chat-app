@@ -45,9 +45,7 @@ const ChatPage = () => {
               <ChatMessage message={message} />
             ))}
 
-            {/* <ChatMessage />
-            <ChatMessage />
-            <ChatMessage /> */}
+            
           </div>
           <form onSubmit={handleSubmit} className={styles.input}>
             <input
