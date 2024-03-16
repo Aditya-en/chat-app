@@ -12,7 +12,7 @@ const ChatPage = () => {
   const [message, setMessage] = useState("");
 
   const { selectedConversation, setSelectedConversation } = useConversation();
-
+  console.log(selectedConversation);
   const { sendMessage } = useSendMessage();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,10 +42,8 @@ const ChatPage = () => {
           </div>
           <div className={styles.chatcontainer}>
             {messages.map((message) => (
-              <ChatMessage message={message} />
+              <ChatMessage message={message} key={message._id} />
             ))}
-
-            
           </div>
           <form onSubmit={handleSubmit} className={styles.input}>
             <input
