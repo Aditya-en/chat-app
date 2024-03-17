@@ -1,9 +1,23 @@
 .chat{
-   padding: 1em;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 20px;
+   /* padding: 1em; */
    color: grey;
    font-size: 1.25em;
+   cursor: pointer;
+   border-radius: 10px;
+   overflow: hidden;
    border-bottom: 2px solid blue;
 }
+
+.chat img{
+   width: 40px;
+   aspect-ratio: 1;
+
+}
 .active{
-   color: white;
+   color: black;
+   background-color: lightblue;
 }

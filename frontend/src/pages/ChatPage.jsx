@@ -12,7 +12,7 @@ const ChatPage = () => {
   const [message, setMessage] = useState("");
 
   const { selectedConversation, setSelectedConversation } = useConversation();
-  console.log(selectedConversation);
+  // console.log("this is selected conversation", selectedConversation);
   const { sendMessage } = useSendMessage();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,8 +24,10 @@ const ChatPage = () => {
 
   return (
     <div className={styles["container"]}>
-      <h1>FeelTalk</h1>
-      <button onClick={logout}>LogOut</button>
+      <h1>
+        FeelTalk <button onClick={logout}>LogOut</button>
+      </h1>
+      {/* <button onClick={logout}>LogOut</button> */}
       <div className={styles["chat-interface"]}>
         <div className={styles.sidebar}>
           <SideBar />
@@ -33,7 +35,12 @@ const ChatPage = () => {
         <div className={styles.divider}></div>
         <div className={styles.chatting}>
           <div className={styles.box}>
-            <span>profilepic</span>
+            {/* <span>profilepic</span> */}
+            {selectedConversation ? (
+              <img src={selectedConversation.profilepic} alt="profilepic" />
+            ) : (
+              ""
+            )}
             {selectedConversation ? (
               <span>{selectedConversation.fullname}</span>
             ) : (
@@ -41,9 +48,13 @@ const ChatPage = () => {
             )}
           </div>
           <div className={styles.chatcontainer}>
-            {messages.map((message) => (
-              <ChatMessage message={message} key={message._id} />
-            ))}
+            {messages ? (
+              messages.map((message) => (
+                <ChatMessage message={message} key={message._id} />
+              ))
+            ) : (
+              <h1>No messages yet</h1>
+            )}
           </div>
           <form onSubmit={handleSubmit} className={styles.input}>
             <input

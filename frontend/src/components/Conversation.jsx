@@ -5,6 +5,7 @@ import useConversation from "../zustand/useConversation";
 const Conversation = ({ conversation }) => {
   const { selectedConversation, setSelectedConversation } = useConversation();
   const isSelected = selectedConversation?._id === conversation._id;
+  // console.log("here", conversation);
 
   return (
     <div
@@ -13,7 +14,8 @@ const Conversation = ({ conversation }) => {
       }}
       className={`${styles["chat"]} ${isSelected ? styles["active"] : ""}`}
     >
-      {conversation.fullname}
+      <img src={conversation.profilepic} alt="" />
+      <p>{conversation.fullname}</p>
     </div>
   );
 };

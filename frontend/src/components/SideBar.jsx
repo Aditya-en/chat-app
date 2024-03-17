@@ -31,7 +31,7 @@ const SideBar = () => {
   return (
     <div className={styles["container"]}>
       <div className={styles.user}>
-        <span>profilepic</span>
+        <img src={authUser.profilepic} alt="" />
         <span>{authUser.fullname}</span>
       </div>
       <form className={styles["search"]} onSubmit={handleSubmit}>
