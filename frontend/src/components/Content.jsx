@@ -19,7 +19,7 @@ const Content = () => {
           and have fun chatting together!{" "}
         </p>
         <button className={styles["btnn"]}>
-          <a href="#">JOIN US</a>
+          <a href="/signup">JOIN US</a>
         </button>
       </div>
 

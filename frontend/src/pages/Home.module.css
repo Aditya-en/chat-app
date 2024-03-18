@@ -3,6 +3,6 @@
    background: linear-gradient(to top,rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url(../assets/8.jpg);
    background-position: center;
    background-size: cover;
-   height: 109vh;
-   overflow: hidden;
+   height: 100vh;
+   color-scheme: dark;
 }

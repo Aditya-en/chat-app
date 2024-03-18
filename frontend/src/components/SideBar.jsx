@@ -46,9 +46,13 @@ const SideBar = () => {
         <button type="submit">Search</button>
       </form>
       <div className={styles["conversations"]}>
-        {conversations.map((conversation) => (
-          <Conversation key={conversation._id} conversation={conversation} />
-        ))}
+        {!loading ? (
+          conversations.map((conversation) => (
+            <Conversation key={conversation._id} conversation={conversation} />
+          ))
+        ) : (
+          <h1>Loading...</h1>
+        )}
       </div>
     </div>
   );

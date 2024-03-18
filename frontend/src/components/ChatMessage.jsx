@@ -12,29 +12,19 @@ function extractTime(createdAt) {
   return formattedTime;
 }
 
-const ChatMessage = ({ message }) => {
+const ChatMessage = ({ message, sender }) => {
   // console.log("this is it", message.message);
   const { selectedConversation } = useConversation();
-  function isSender(message) {
-    return message.receiverId === selectedConversation?._id;
-  }
+
   // console.log(isSender(message));
   return (
     <>
-      <div
-        className={`${styles["Message"]} ${
-          isSender(message) ? styles["sender"] : ""
-        }`}
-      >
-        {/* {console.log(message)} */}
+      <div className={`${styles["Message"]} ${sender ? styles["sender"] : ""}`}>
         <p>{message.message}</p>
       </div>
-      <span className={isSender(message) ? styles["sender-time"] : ""}>
+      <span className={sender ? styles["sender-time"] : ""}>
         {extractTime(message.createdAt)}
       </span>
-      {/* <div className={`${styles["Message"]} }`}>
-        <p>{message.message}</p>
-      </div> */}
     </>
   );
 };

@@ -6,11 +6,12 @@ import cors from "cors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import connectToMongoDB from "./db/connectToMongoDB.js";
+import { app, server } from "./socket/socket.js";
 
 dotenv.config();
 const PORT = process.env.PORT || 8000;
 
-const app = express();
+// const app = express();
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
@@ -22,7 +23,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/users", usersRoute);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   connectToMongoDB();
   console.log("Server running at PORT :", PORT);
 });

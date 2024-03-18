@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className={styles["menu"]}>
         <ul className={styles["links"]}>
           <li>
-            <a href="#">SIGNUP</a>
+            <a href="/signup">SIGNUP</a>
           </li>
           <li>
             <a href="#">CONTACT</a>

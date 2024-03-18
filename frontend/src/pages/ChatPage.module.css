@@ -48,9 +48,10 @@
 .container h1{
    
    padding: 30px;
+   /* text-align: center; */
    color: white;
    font-family: Arial;
-   font-weight: bold;
+   font-weight: bold; 
    margin: 0px;
 }
 .chatcontainer{
@@ -60,6 +61,25 @@
    color-scheme: dark;
    padding-inline: 0.8em;
    overflow-y: scroll;
+}
+.chatcontainer div{
+  display: flex;
+  flex-direction: column;
+}
+.sender {
+   /* background-color: #add8e6; Light blue background */
+   align-self: flex-end; /* Align to the right */
+   padding: 0px;
+   color: black; /* Text color */
+ }
+ .sender-time {
+   align-self: flex-end; /* Align to the right */
+   color: grey; /* Text color */
+ }
+ 
+
+.chatcontainer h1{
+   text-align: center;
 }
 .input{
 

@@ -6,11 +6,25 @@ import useLogout from "../hooks/useLogout";
 import useConversation from "../zustand/useConversation";
 import useGetMessages from "../hooks/useGetMessages";
 import useSendMessage from "../hooks/useSendMessage";
-const ChatPage = () => {
-  const { logout } = useLogout();
-  const { messages } = useGetMessages();
-  const [message, setMessage] = useState("");
+import useListenMessages from "../hooks/useListenMessages";
+import { useRef, useEffect } from "react";
 
+const ChatPage = () => {
+  function isSender(message) {
+    return message.receiverId === selectedConversation?._id;
+  }
+  const { logout } = useLogout();
+  const { messages, loading } = useGetMessages();
+  const [message, setMessage] = useState("");
+  useListenMessages();
+
+  const lastMessageRef = useRef();
+  useEffect(() => {
+    setTimeout(() => {
+      lastMessageRef.current?.scrollIntoView({ behavior: "smooth" });
+    }),
+      [messages];
+  });
   const { selectedConversation, setSelectedConversation } = useConversation();
   // console.log("this is selected conversation", selectedConversation);
   const { sendMessage } = useSendMessage();
@@ -48,12 +62,18 @@ const ChatPage = () => {
             )}
           </div>
           <div className={styles.chatcontainer}>
-            {messages ? (
+            {!loading ? (
               messages.map((message) => (
-                <ChatMessage message={message} key={message._id} />
+                <div
+                  key={message._id}
+                  ref={lastMessageRef}
+                  className={isSender(message) ? styles["sender"] : ""}
+                >
+                  <ChatMessage message={message} sender={isSender(message)} />
+                </div>
               ))
             ) : (
-              <h1>No messages yet</h1>
+              <h1>Loading...</h1>
             )}
           </div>
           <form onSubmit={handleSubmit} className={styles.input}>
