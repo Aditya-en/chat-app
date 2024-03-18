@@ -64,7 +64,12 @@
 }
 .chatcontainer div{
   display: flex;
+  width: 65%;
   flex-direction: column;
+}
+.divide{
+   border: 1px solid grey;
+   /* border-color : grey; */
 }
 .sender {
    /* background-color: #add8e6; Light blue background */

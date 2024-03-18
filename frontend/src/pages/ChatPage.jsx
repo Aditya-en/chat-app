@@ -41,6 +41,7 @@ const ChatPage = () => {
       <h1>
         FeelTalk <button onClick={logout}>LogOut</button>
       </h1>
+      <hr className={styles.divide} />
       {/* <button onClick={logout}>LogOut</button> */}
       <div className={styles["chat-interface"]}>
         <div className={styles.sidebar}>
@@ -61,6 +62,7 @@ const ChatPage = () => {
               ""
             )}
           </div>
+          <hr className={styles.divide} />
           <div className={styles.chatcontainer}>
             {!loading ? (
               messages.map((message) => (
